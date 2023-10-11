@@ -7,4 +7,6 @@ catboost
 xgboost
 tqdm
 flask
+python-dotenv
+pymysql
 # -e .
