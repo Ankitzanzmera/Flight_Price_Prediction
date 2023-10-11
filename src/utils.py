@@ -21,5 +21,3 @@ def read_data_from_sql():
         return df
     except Exception as e:
         raise CustomException(e,sys)
-
-read_data_from_sql()
