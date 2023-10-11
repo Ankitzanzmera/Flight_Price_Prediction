@@ -17,7 +17,9 @@ list_of_file = [
     "src/exception.py",
     "src/utils.py",
     "app.py",
-    "Dockerfile"
+    "setup.py",
+    "Dockerfile",
+    "requirements.txt"
 ]
 
 for filepath in list_of_file:
