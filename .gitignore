@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#personal
+notebooks/cateboost_info
+
 # C extensions
 *.so
 
@@ -50,6 +53,9 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+
+# personal
+logs/
 
 # Translations
 *.mo

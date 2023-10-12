@@ -9,4 +9,5 @@ tqdm
 flask
 python-dotenv
 pymysql
+ipykernel
 # -e .
