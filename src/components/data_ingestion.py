@@ -24,7 +24,7 @@ class DataIngestion:
 
             df.to_csv(self.data_ingestion_config.raw_data_path)
 
-            train_data,test_data = train_test_split(df,test_size=0.2,random_state=45,shuffle=True)
+            train_data,test_data = train_test_split(df,test_size=0.2,random_state=34,shuffle=True)
 
             train_data.to_csv(self.data_ingestion_config.train_data_path)
             test_data.to_csv(self.data_ingestion_config.test_data_path)
