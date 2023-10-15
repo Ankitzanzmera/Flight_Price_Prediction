@@ -5,6 +5,7 @@ __pycache__/
 
 #personal
 notebooks/cateboost_info
+catboost_info/
 
 # C extensions
 *.so
