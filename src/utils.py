@@ -62,7 +62,7 @@ def hyprtparameter_tuning(report: dict,X_train,y_train,X_test,y_test)-> dict:
     model = All_model_list()[model_name]
     params = params_of_models(model_name)
 
-    random_search = RandomizedSearchCV(model,param_distributions=params,cv=5,n_iter=10)
+    random_search = RandomizedSearchCV(model,param_distributions=params,cv=5,n_iter=30)
     random_search.fit(X_train,y_train)
     
     tuned_params = random_search.best_params_

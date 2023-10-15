@@ -10,4 +10,5 @@ flask
 python-dotenv
 pymysql
 ipykernel
+mlflow
 # -e .
