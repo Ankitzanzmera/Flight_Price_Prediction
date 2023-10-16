@@ -43,8 +43,9 @@ class DataTransformation:
         df.drop(['Dep_Time'],axis = 1,inplace=True)
 
         ## Arrival Time
-        df['Arrival_hr'] = df['Arrival_Time'].str.split(":").str[0].astype(float)
-        df["Arrival_min"] = df['Arrival_Time'].str.split(":").str[1].str.split(" ").str[0].astype(float)
+        # df['Arrival_hr'] = df['Arrival_Time'].str.split(":").str[0].astype(float)
+        # df["Arrival_min"] = df['Arrival_Time'].str.split(":").str[1].str.split(" ").str[0].astype(float)
+        # df.drop(['Arrival_Time'],axis = 1,inplace=True)
         df.drop(['Arrival_Time'],axis = 1,inplace=True)
 
         ## Duration

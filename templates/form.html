@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>Prediction Page</title>
+</head>
+
+<body>
+    <form class="form-horizontal" style="margin-top: 30px;" action="{{url_for('predict_datapoint')}}" method="post">
+        <fieldset>
+        
+        <!-- Form Name -->
+        <legend style="text-align: center;">Enter Particulars to Predict the Price of Airline Ticket </legend>
+        
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Airline">Airline</label>
+          <div class="col-md-4">
+            <select id="Airline" name="Airline" class="form-control">
+              <option value="IndiGo">IndiGo</option>
+              <option value="Air India">Air India</option>
+              <option value="Jet Airways">Jet Airways</option>
+              <option value="SpiceJet">SpiceJet</option>
+              <option value="Multiple carriers">Multiple carriers</option>
+              <option value="GoAir">GoAir</option>
+              <option value="Vistara">Vistara</option>
+              <option value="Air Asia">Air Asia</option>
+              <option value="Vistara Premium economy">Vistara Premium economy</option>
+              <option value="Jet Airways Business">Jet Airways Business</option>
+              <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+              <option value="Trujet">Trujet</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Source">Source</label>
+          <div class="col-md-4">
+            <select id="Source" name="Source" class="form-control">
+              <option value="Banglore">Banglore</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Destination">Destination</label>
+          <div class="col-md-4">
+            <select id="Destination" name="Destination" class="form-control">
+              <option value="New Delhi">New Delhi</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Cochin">Cochin</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Hyderabad">Hyderabad</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Date of journey">Date_of_Journey</label>  
+          <div class="col-md-4">
+          <input id="Date of journey" name="Date_of_Journey" type="date" class="form-control input-md" min="2019-01-01" max="2019-12-31">
+            
+          </div>
+        </div>
+        
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Total_Stops">Total_Stops</label>
+          <div class="col-md-4">
+            <select id="Total_Stops" name="Total_Stops" class="form-control">
+              <option value="0">non-stop</option>
+              <option value="1">1 stop</option>
+              <option value="2">2 stops</option>
+              <option value="3">3 stops</option>
+              <option value="4">4 stops</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="Departure_Time">Departure Time</label>  
+          <div class="col-md-4">
+          <input id="Departure_Time" name="Departure_Time" type="time" placeholder="placeholder" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">Duration</label>  
+          <div class="col-md-4">
+          <input id="textinput" name="Duration" type="time" placeholder="placeholder" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="button1id">Double Button</label>
+          <div class="col-md-8">
+            <input type="submit" value="Predict" class="btn btn-success">
+            <input type="reset" value="Reset" class=" btn btn-danger">
+          </div>
+        </div>
+        
+        </fieldset>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">Prediction</label>  
+          <div class="col-md-4">
+            <input id="textinput" name="predict" type="text" value="{{final_result}}" class="form-control input-md" disabled>
+          </div>
+        </div>
+
+      </form>
+       <br> 
+      <h3 style="text-align: center;">Thank You!!!</h3>
+</body>
+</html>
