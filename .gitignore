@@ -7,6 +7,7 @@ __pycache__/
 notebooks/cateboost_info
 catboost_info/
 mlflow_info.txt
+mlruns/
 
 # C extensions
 *.so

@@ -25,7 +25,6 @@ def predict_datapoint():
             Date_of_Journey = request.form.get('Date_of_Journey'),
             Total_Stops = request.form.get('Total_Stops'),
             Departure_Time = request.form.get('Departure_Time'),
-            Duration = request.form.get('Duration')
         )
         input_data.preprocess_predict_data()
         final_input_data = input_data.get_data_as_dataframe()

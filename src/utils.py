@@ -16,7 +16,7 @@ from xgboost import XGBRegressor
 from catboost import CatBoostRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import r2_score
-from sklearn.model_selection import RandomizedSearchCV,GridSearchCV
+from sklearn.model_selection import RandomizedSearchCV
 
 load_dotenv()
 host = os.getenv("host")
