@@ -49,15 +49,15 @@ class DataTransformation:
         df.drop(['Arrival_Time'],axis = 1,inplace=True)
 
         ## Duration
-        # df['Duration_hr'] = df['Duration'].str.split(" ").str[0].str.split("h").str[0]
-        # df['Duration_min'] = df['Duration'].str.split(" ").str[1].str.split("m").str[0].astype(float)
-        # df['Duration_min'] = df['Duration_min'].fillna(0)
+        df['Duration_hr'] = df['Duration'].str.split(" ").str[0].str.split("h").str[0]
+        df['Duration_min'] = df['Duration'].str.split(" ").str[1].str.split("m").str[0].astype(float)
+        df['Duration_min'] = df['Duration_min'].fillna(0)
 
-        # if "5m" in df['Duration_hr'].values:
-        #     df = df[df['Duration_hr'] != "5m"] 
-        #     df['Duration_hr'] = df['Duration_hr'].astype(float)
-        # else:
-        #     df['Duration_hr'] = df['Duration_hr'].astype(float)
+        if "5m" in df['Duration_hr'].values:
+            df = df[df['Duration_hr'] != "5m"] 
+            df['Duration_hr'] = df['Duration_hr'].astype(float)
+        else:
+            df['Duration_hr'] = df['Duration_hr'].astype(float)
 
         df.drop(['Duration'],axis = 1,inplace=True)
 

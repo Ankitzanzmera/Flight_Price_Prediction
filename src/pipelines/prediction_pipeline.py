@@ -16,7 +16,7 @@ class PredictionPipeline:
         try:
             preprocessor_obj = load_object(self.preprocessor_path)
             model_obj = load_object(self.model_path)
-            logging.info("Successfullt loaded Preorcessor and Model Object")
+            logging.info("Successfully loaded Preorcessor and Model Object")
 
             scaled_data = preprocessor_obj.transform(input_data)
 
@@ -28,14 +28,15 @@ class PredictionPipeline:
 
 
 class CustomData:
-    def __init__(self,Airline,Source,Destination,Date_of_Journey,Total_Stops,Departure_Time) -> None:
+    def __init__(self,Airline,Source,Destination,Date_of_Journey,Total_Stops,Duration,Departure_Time) -> None:
         self.Airline = Airline
         self.Source = Source
         self.Destination = Destination
         self.Date_of_Journey = Date_of_Journey
         self.Total_Stops = Total_Stops
+        self.Duration = Duration
         self.Departure_Time = Departure_Time
-        logging.info(f'{self.Airline},{self.Source},{self.Destination},{self.Date_of_Journey},{self.Total_Stops},{self.Departure_Time}')
+        logging.info(f'{self.Airline},{self.Source},{self.Destination},{self.Date_of_Journey},{self.Total_Stops},{self.Duration},{self.Departure_Time}')
 
     def preprocess_predict_data(self):
         try:
@@ -46,9 +47,10 @@ class CustomData:
             self.dep_hour = self.Departure_Time.split(":")[0]
             self.dep_min = self.Departure_Time.split(":")[1]
             del self.Departure_Time
-            # self.Duration_hr = self.Duration.split(":")[0]
-            # self.Duration_min = self.Duration.split(":")[0]
-            # logging.info(f'{self.Airline},{self.Source},{self.Destination},{self.year,self.month,self.date},{self.Total_Stops},{self.dep_hour,self.dep_min},{self.Duration_hr,self.Duration_min}')
+            self.Duration_hr = self.Duration.split(":")[0]
+            self.Duration_min = self.Duration.split(":")[1]
+            
+            del self.Duration
             logging.info("Preprocess of Input Data is Done")
         except Exception as e:
             raise CustomException(e,sys)
@@ -65,6 +67,8 @@ class CustomData:
                 "Total_Stops":[self.Total_Stops],
                 "dep_hour":[self.dep_hour],
                 "dep_min":[self.dep_min],
+                "Duration_hr" :[self.Duration_hr],
+                "Duration_min":[self.Duration_min]
             }
             input_df = pd.DataFrame(input_df)           
             logging.info(f'{input_df}')

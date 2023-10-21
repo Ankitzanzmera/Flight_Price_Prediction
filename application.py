@@ -24,6 +24,7 @@ def predict_datapoint():
             Destination = request.form.get('Destination'),
             Date_of_Journey = request.form.get('Date_of_Journey'),
             Total_Stops = request.form.get('Total_Stops'),
+            Duration = request.form.get('Duration'),
             Departure_Time = request.form.get('Departure_Time'),
         )
         input_data.preprocess_predict_data()
@@ -33,7 +34,6 @@ def predict_datapoint():
 
         result = round(pred[0],2)
         return render_template("form.html",final_result = result)
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5000,debug=True)
